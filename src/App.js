@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Modal from './Modal';
-import './App.css';
+import './App.scss';
 
 class App extends Component {
   constructor(props){
