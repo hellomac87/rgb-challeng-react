@@ -4,7 +4,7 @@
 
 ## 배포주소
 
-(https://hardcore-johnson-2dfb4b.netlify.com/)[https://hardcore-johnson-2dfb4b.netlify.com/]
+[https://hardcore-johnson-2dfb4b.netlify.com/](https://hardcore-johnson-2dfb4b.netlify.com/)
 
 ## tool
 
