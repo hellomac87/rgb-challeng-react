@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  margin-top: 300px;
 }
 .circle-wrap{
   width:auto;
@@ -13,4 +14,31 @@
   border-radius: 25px;
   margin:0 5px;
   cursor:pointer;
+  transition:transform;
+  transition-duration: 0.3s;
+}
+.circle.active{
+  transform: scale(40);
+}
+
+.modal{
+  display: none;
+  position: fixed;
+  width:100%;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index: 10;
+  color:#fff;
+
+}
+.modal.active{
+  display: block;
+}
+.result-box{
+  position: fixed;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -70%);
 }

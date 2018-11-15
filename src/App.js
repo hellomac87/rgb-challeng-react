@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Modal from './Modal';
 import './App.css';
 
 class App extends Component {
@@ -8,7 +9,8 @@ class App extends Component {
       score : 0,
       answer: this.randomAnswer(),
       problems: this.randomRgbArr(),
-      activeItem: {}
+      activeItem: {},
+      modal: null
     }
   }
 
@@ -26,22 +28,34 @@ class App extends Component {
       // 정답시
       this.setState((prevState) => ({ 
         score: prevState.score + 100,
+        modal: true
       }));
     }else{
       // 오답시
       this.setState({
-        score: 0
+        score: 0,
+        modal: false
       });
     }
     // 공통
     this.setState({
       activeItem: { [i]: true }
     });
-      
+    console.log(this.state)
+  }
+
+  handleNext(){
+    // 다음 문제 제출
+    this.setState({
+      answer: this.randomAnswer(),
+      problems: this.randomRgbArr(),
+      activeItem: {},
+      modal: null
+    });
   }
 
   render() {
-    const { problems, score, answer, activeItem} = this.state;
+    const { problems, score, answer, activeItem, modal} = this.state;
     const circles = problems.map((problem, index) => {
       return (
         <Circle 
@@ -59,6 +73,7 @@ class App extends Component {
         <div className="circle-wrap">
           {circles}
         </div>
+        <Modal modal={modal} onNext={() => this.handleNext()} score={score}/>
       </div>
     );
   }
