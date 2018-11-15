@@ -7,19 +7,21 @@
   margin-top:50px;
   display: flex;
   justify-content: center;
+  .circle{
+    width:50px;
+    height: 50px;
+    border-radius: 25px;
+    margin:0 5px;
+    cursor:pointer;
+    transition:transform;
+    transition-duration: 0.3s;
+    &.active{
+      transform: scale(40);
+    }
+  }
 }
-.circle{
-  width:50px;
-  height: 50px;
-  border-radius: 25px;
-  margin:0 5px;
-  cursor:pointer;
-  transition:transform;
-  transition-duration: 0.3s;
-}
-.circle.active{
-  transform: scale(40);
-}
+
+
 
 .modal{
   display: none;
@@ -31,14 +33,13 @@
   bottom:0;
   z-index: 10;
   color:#fff;
-
-}
-.modal.active{
-  display: block;
-}
-.result-box{
-  position: fixed;
-  top:50%;
-  left:50%;
-  transform: translate(-50%, -70%);
+  &.active{
+    display: block;
+  }
+  .result-box{
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -70%);
+  }
 }
