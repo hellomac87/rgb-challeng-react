@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Modal from './Modal';
+import classNames from 'classnames';
 import './App.scss';
 
 class App extends Component {
@@ -62,7 +63,7 @@ class App extends Component {
         key={index} 
         onClick={() => this.handleClick(index)} 
         style={problem}
-        toggleClass={activeItem[index] ? 'circle active' : 'circle'}
+          toggleClass={classNames(activeItem[index] ? 'circle active' : 'circle') }
         />
       )
     })
